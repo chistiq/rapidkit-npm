@@ -141,7 +141,8 @@ export async function checkForUpdates(): Promise<void> {
         console.log(
           chalk.yellow(`\n⚠️  Update available: ${CURRENT_VERSION} → ${cached.latestVersion}`)
         );
-        console.log(chalk.cyan('Run: npm install -g rapidkit@latest\n'));
+        console.log(chalk.cyan('Recommended: npm install -g workspai'));
+        console.log(chalk.gray('Legacy compatibility: npm install -g rapidkit@latest\n'));
       }
       return;
     }
@@ -158,7 +159,8 @@ export async function checkForUpdates(): Promise<void> {
 
     if (latestVersion && compareVersions(latestVersion, CURRENT_VERSION) > 0) {
       console.log(chalk.yellow(`\n⚠️  Update available: ${CURRENT_VERSION} → ${latestVersion}`));
-      console.log(chalk.cyan('Run: npm install -g rapidkit@latest\n'));
+      console.log(chalk.cyan('Recommended: npm install -g workspai'));
+      console.log(chalk.gray('Legacy compatibility: npm install -g rapidkit@latest\n'));
     } else {
       logger.debug('You are using the latest version');
     }

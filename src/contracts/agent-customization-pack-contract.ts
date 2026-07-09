@@ -40,6 +40,14 @@ export type AgentCustomizationPackContract = {
   };
 };
 
+function toWorkspaiContractPath(relativePath: string): string {
+  return relativePath
+    .replace(/^\.rapidkit\//, '.workspai/')
+    .replace(/rapidkit-workspace/g, 'workspai-workspace')
+    .replace(/rapidkit-diagnose/g, 'workspai-diagnose')
+    .replace(/rapidkit-mcp-design/g, 'workspai-mcp-design');
+}
+
 export function buildAgentCustomizationPackContract(): AgentCustomizationPackContract {
   return {
     schemaVersion: AGENT_CUSTOMIZATION_PACK_SCHEMA_VERSION,
@@ -48,8 +56,8 @@ export function buildAgentCustomizationPackContract(): AgentCustomizationPackCon
         meaning:
           'Generate the portable grounding index, AGENTS.md, and provider-specific lightweight instructions.',
         requiredOutputs: [
-          '.rapidkit/reports/INDEX.json',
-          '.rapidkit/reports/agent-customization-pack.json',
+          '.workspai/reports/INDEX.json',
+          '.workspai/reports/agent-customization-pack.json',
           'AGENTS.md',
         ],
       },
@@ -57,15 +65,15 @@ export function buildAgentCustomizationPackContract(): AgentCustomizationPackCon
         meaning:
           'Generate the full VS Code-native pack: instructions, prompts, skills, custom agents, and validation metadata.',
         requiredOutputs: [
-          '.rapidkit/reports/INDEX.json',
-          '.rapidkit/reports/agent-customization-pack.json',
+          '.workspai/reports/INDEX.json',
+          '.workspai/reports/agent-customization-pack.json',
           'AGENTS.md',
-          '.github/instructions/rapidkit-workspace.instructions.md',
-          '.github/prompts/rapidkit-diagnose.prompt.md',
-          '.github/skills/rapidkit-workspace-intelligence/SKILL.md',
+          '.github/instructions/workspai-workspace.instructions.md',
+          '.github/prompts/workspai-diagnose.prompt.md',
+          '.github/skills/workspai-workspace-intelligence/SKILL.md',
           '.github/agents/workspai-advisor.agent.md',
-          '.rapidkit/reports/rapidkit-mcp-design.json',
-          WORKSPACE_SKILLS_INDEX_PATH,
+          '.workspai/reports/workspai-mcp-design.json',
+          toWorkspaiContractPath(WORKSPACE_SKILLS_INDEX_PATH),
         ],
       },
     },
@@ -105,7 +113,7 @@ export function buildAgentCustomizationPackContract(): AgentCustomizationPackCon
     },
     standardAnswerContract: [...STANDARD_ANSWER_CONTRACT_SECTIONS],
     requiredReports: AGENT_REPORT_CATALOG.map((entry) => ({
-      path: entry.relativePath,
+      path: toWorkspaiContractPath(entry.relativePath),
       label: entry.label,
       required: entry.required,
     })),
@@ -134,7 +142,7 @@ export function buildAgentCustomizationPackContract(): AgentCustomizationPackCon
       'mcp-design',
     ],
     pathLayers: {
-      l1CanonicalRoots: [`.rapidkit/reports/`, `${RAPIDKIT_SKILLS_DIR}/`],
+      l1CanonicalRoots: [`.workspai/reports/`, `${toWorkspaiContractPath(RAPIDKIT_SKILLS_DIR)}/`],
       l2PrefixedMirrorRoots: ['.github/', '.cursor/', '.claude/'],
       l3SharedIndustryFiles: ['AGENTS.md', '.github/copilot-instructions.md', 'CLAUDE.md'],
     },

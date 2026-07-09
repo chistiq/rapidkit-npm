@@ -63,12 +63,12 @@ export function buildCreatePlannerCapabilitiesContract(): CreatePlannerCapabilit
       'native-create': {
         status: 'available',
         meaning:
-          'RapidKit owns the scaffold contract, marker, registry, doctor, bootstrap, and workspace model path.',
+          'Workspai owns the scaffold contract, marker, registry, doctor, bootstrap, and workspace model path.',
       },
       'external-create-adopt': {
         status: 'planned',
         meaning:
-          'A stable ecosystem generator exists, but RapidKit does not yet own the post-create contract.',
+          'A stable ecosystem generator exists, but Workspai does not yet own the post-create contract.',
       },
       'adopt-only': {
         status: 'available',

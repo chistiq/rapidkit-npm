@@ -14,20 +14,35 @@ import {
 } from '../contracts/workspace-artifact-paths.js';
 import { AGENT_REPORT_CATALOG } from '../workspace-agent-sync.js';
 
+function toWorkspaiContractPath(relativePath: string): string {
+  return relativePath
+    .replace(/^\.rapidkit\//, '.workspai/')
+    .replace(/rapidkit-workspace/g, 'workspai-workspace')
+    .replace(/rapidkit-diagnose/g, 'workspai-diagnose')
+    .replace(/rapidkit-mcp-design/g, 'workspai-mcp-design');
+}
+
 describe('Phase 4 path registry parity (4.0.3)', () => {
   it('aligns artifact path constants with agent customization pack contract', () => {
     const pack = buildAgentCustomizationPackContract();
 
     expect(pack.pathLayers.l1CanonicalRoots).toEqual(
-      expect.arrayContaining([`.rapidkit/reports/`, `${RAPIDKIT_SKILLS_DIR}/`])
+      expect.arrayContaining([
+        `.workspai/reports/`,
+        `${toWorkspaiContractPath(RAPIDKIT_SKILLS_DIR)}/`,
+      ])
     );
     expect(pack.outputKinds).toEqual(
       expect.arrayContaining(['operational-skill', 'skills-index', 'explain-report'])
     );
-    expect(pack.presets.enterprise.requiredOutputs).toContain(WORKSPACE_SKILLS_INDEX_PATH);
+    expect(pack.presets.enterprise.requiredOutputs).toContain(
+      toWorkspaiContractPath(WORKSPACE_SKILLS_INDEX_PATH)
+    );
 
-    const catalogPaths = AGENT_REPORT_CATALOG.map((entry) => entry.relativePath);
-    expect(catalogPaths).toContain(WORKSPACE_SKILLS_INDEX_PATH);
+    const catalogPaths = AGENT_REPORT_CATALOG.map((entry) =>
+      toWorkspaiContractPath(entry.relativePath)
+    );
+    expect(catalogPaths).toContain(toWorkspaiContractPath(WORKSPACE_SKILLS_INDEX_PATH));
     for (const report of pack.requiredReports) {
       expect(catalogPaths).toContain(report.path);
     }

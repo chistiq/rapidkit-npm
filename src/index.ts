@@ -8626,10 +8626,27 @@ function printHelpSectionDivider(title: string): void {
   console.log(chalk.gray(rule));
 }
 
+function printMigrationNotice(): void {
+  console.log(chalk.yellow('Migration notice: rapidkit is moving to Workspai.'));
+  console.log(
+    chalk.gray(
+      'The rapidkit npm package is in compatibility mode and is planned for deprecation in a future release.'
+    )
+  );
+  console.log(chalk.gray('New installs should use:'));
+  console.log(chalk.cyan('  npm install -g workspai'));
+  console.log(chalk.cyan('  npx workspai --help'));
+  console.log(chalk.gray('Legacy compatibility package: npm install -g rapidkit'));
+  console.log(chalk.gray('Package: https://www.npmjs.com/package/workspai'));
+  console.log(chalk.gray('Repo:    https://github.com/rapidkitlabs/workspai\n'));
+}
+
 function printHelp() {
   const quickStartInitDev = isWindowsPlatform()
     ? 'npx rapidkit init; npx rapidkit dev'
     : 'npx rapidkit init && npx rapidkit dev';
+
+  printMigrationNotice();
 
   console.log(chalk.white('Usage:\n'));
   console.log(chalk.cyan('  npx rapidkit <workspace-name> [options]\n'));

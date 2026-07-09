@@ -1,6 +1,50 @@
 # Release Notes
 
-## Latest Release: v0.42.0 (July 6, 2026)
+## Latest Release: v0.42.1 (July 9, 2026)
+
+### Workspai Migration Notice
+
+This patch release keeps the legacy `rapidkit` npm package available while
+making the migration path to Workspai explicit for new users.
+
+**What's New:**
+
+- **README migration guidance**
+  - New installs are directed to the `workspai` npm package.
+  - The new repository is linked at
+    [rapidkitlabs/workspai](https://github.com/rapidkitlabs/workspai).
+  - The legacy `rapidkit` package is documented as a compatibility package that
+    is planned for deprecation in a future release.
+
+- **CLI help migration guidance**
+  - `npx rapidkit --help` now prints a migration notice before the legacy command
+    reference so users who do not read the README still see the new path.
+
+- **Contract bridge alignment**
+  - Extension compatibility metadata points to `workspai@0.43.1`.
+  - Runtime/create-planner wording uses Workspai for the npm CLI ownership
+    surface.
+
+**Breaking changes:** None.
+
+**Verification:**
+
+- `npm run validate:contracts`
+- `npm run build`
+- `npm run test -- src/__tests__/index.test.ts`
+- `node dist/index.js --help`
+
+**Upgrade:**
+
+```bash
+npm install -g rapidkit@0.42.1
+```
+
+[Full Release Notes](./releases/RELEASE_NOTES_v0.42.1.md)
+
+---
+
+## Previous Release: v0.42.0 (July 6, 2026)
 
 ### Optional Python Engine and Profile Compatibility
 

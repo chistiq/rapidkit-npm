@@ -7,6 +7,23 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Built by RapidKit](https://img.shields.io/badge/Built%20by-RapidKit-0f172a?logo=github)](https://www.getrapidkit.com)
 
+> **Migration notice: RapidKit npm is moving to Workspai**
+>
+> The `rapidkit` npm package is now in compatibility mode and is planned for
+> deprecation in a future release. New installs and new workspaces should use
+> the Workspai CLI instead of the legacy `rapidkit` package:
+>
+> ```bash
+> npm install -g workspai
+> npx workspai --help
+> ```
+>
+> New npm package: [workspai](https://www.npmjs.com/package/workspai)  
+> New repository: [rapidkitlabs/workspai](https://github.com/rapidkitlabs/workspai)
+>
+> The `rapidkit` package remains available during the migration window so
+> existing users and scripts can move safely.
+
 Not another AI coding assistant.
 Not another agent framework.
 Not another context engine.
@@ -23,6 +40,14 @@ contracts, and release gates.
 
 ### Install
 
+Recommended for new projects:
+
+```bash
+npm install -g workspai
+```
+
+Legacy compatibility package:
+
 ```bash
 npm install -g rapidkit
 ```
@@ -32,6 +57,7 @@ npm install -g rapidkit
 Browse all commands without a global install (first run fetches from npm):
 
 ```bash
+npx workspai --help
 npx rapidkit --help
 ```
 
@@ -467,6 +493,14 @@ CI template: [docs/examples/ci-agent-grounding.yml](docs/examples/ci-agent-groun
 
 ## Install
 
+Recommended for new installs:
+
+```bash
+npm install -g workspai
+```
+
+Legacy compatibility package:
+
 ```bash
 npm install -g rapidkit
 ```
@@ -544,16 +578,23 @@ Full syntax: [docs/commands-reference.md](docs/commands-reference.md). CI workfl
 
 RapidKit and Workspai form a single workspace intelligence platform.
 
-RapidKit provides the workspace intelligence engine: model, context, impact, verification, evidence, contracts, and governance.
+Workspai is the new npm CLI and monorepo for workspace intelligence: model,
+context, impact, verification, evidence, contracts, governance, and the short
+alias package.
 
-Workspai — Workspace + Intelligence — provides the VS Code surface: dashboard, sidebar, Incident Studio, AI workflows, and developer-facing workspace operations.
+The legacy `rapidkit` npm package remains available as a compatibility package
+during the migration window, but new installs should use `workspai`.
 
-| Component | Repository                                                             | Role                                        |
-| --------- | ---------------------------------------------------------------------- | ------------------------------------------- |
-| CLI       | [rapidkit-npm](https://github.com/rapidkitlabs/rapidkit-npm)           | Commands, governance, adoption, CI evidence |
-| VS Code   | [rapidkit-vscode](https://github.com/rapidkitlabs/rapidkit-vscode)     | Workspai dashboard, sidebar, AI studio      |
-| Core      | [rapidkit-core](https://github.com/rapidkitlabs/rapidkit-core)         | Python engine, modules, doctor              |
-| Examples  | [rapidkit-examples](https://github.com/rapidkitlabs/rapidkit-examples) | Starter workspaces                          |
+The Workspai VS Code extension provides the dashboard, sidebar, Incident Studio,
+AI workflows, and developer-facing workspace operations.
+
+| Component  | Repository                                                             | Role                                        |
+| ---------- | ---------------------------------------------------------------------- | ------------------------------------------- |
+| npm CLI    | [workspai](https://github.com/rapidkitlabs/workspai)                   | Commands, governance, adoption, CI evidence |
+| Legacy npm | [rapidkit-npm](https://github.com/rapidkitlabs/rapidkit-npm)           | Compatibility package during migration      |
+| VS Code    | [rapidkit-vscode](https://github.com/rapidkitlabs/rapidkit-vscode)     | Workspai dashboard, sidebar, AI studio      |
+| Core       | [rapidkit-core](https://github.com/rapidkitlabs/rapidkit-core)         | Python engine, modules, doctor              |
+| Examples   | [rapidkit-examples](https://github.com/rapidkitlabs/rapidkit-examples) | Starter workspaces                          |
 
 ## VS Code extension
 
@@ -570,7 +611,10 @@ Search **Workspai** in the marketplace or install via:
 | Enterprise evidence loop        | Partial                      | Full dashboard                  |
 | Module catalog (FastAPI/NestJS) | Limited                      | Browser UI                      |
 
-The extension invokes this npm CLI. For the latest `adopt` and frontend generator features, install matching CLI version: `npm install -g rapidkit@latest` or `npm link` from this repo ([Development](#development)).
+The extension invokes the npm CLI. For the latest `adopt` and frontend generator
+features, install the new Workspai CLI: `npm install -g workspai`. Maintainers
+working on this legacy package can still use `npm link` from this repo
+([Development](#development)).
 
 ## Documentation
 

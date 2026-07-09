@@ -3,19 +3,16 @@ import { describe, expect, it } from 'vitest';
 import {
   buildExtensionCliCompatibilityContract,
   EXTENSION_CLI_COMPATIBILITY_SCHEMA_VERSION,
+  WORKSPAI_COMPATIBILITY_CLI_VERSION,
 } from '../../contracts/extension-cli-compatibility-contract.js';
-import { createRequire } from 'node:module';
-
-const require = createRequire(import.meta.url);
-const npmPackage = require('../../../package.json') as { version: string };
 
 describe('extension-cli-compatibility contract', () => {
-  it('publishes the npm package version as the extension verification floor', () => {
+  it('publishes the successor Workspai version as the extension verification floor', () => {
     const contract = buildExtensionCliCompatibilityContract();
 
     expect(contract.schemaVersion).toBe(EXTENSION_CLI_COMPATIBILITY_SCHEMA_VERSION);
-    expect(contract.cli).toBe('rapidkit-npm');
-    expect(contract.minimumVerifiedCliVersion).toBe(npmPackage.version);
+    expect(contract.cli).toBe('workspai');
+    expect(contract.minimumVerifiedCliVersion).toBe(WORKSPAI_COMPATIBILITY_CLI_VERSION);
     expect(contract.publishedContractSchemas.runtimeCommandSurface).toContain(
       'runtime-command-surface'
     );

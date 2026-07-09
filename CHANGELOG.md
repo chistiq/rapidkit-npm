@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.42.1] - 2026-07-09
+
+### Changed
+
+- Marked the `rapidkit` npm package as a compatibility package while the npm CLI
+  moves to Workspai.
+- Added README and CLI help migration guidance that points new installs to the
+  `workspai` npm package and the `rapidkitlabs/workspai` repository.
+- Aligned extension compatibility metadata with `workspai@0.43.1`.
+- Updated shared create-planner/runtime contract wording to use Workspai for the
+  npm CLI ownership surface.
+
+### Verification
+
+- `npm run validate:contracts`
+- `npm run build`
+- `npm run test -- src/__tests__/index.test.ts`
+- `node dist/index.js --help`
+
 ## [0.42.0] - 2026-07-06
 
 ### Added
