@@ -1,6 +1,37 @@
 # Release Notes
 
-## Latest Release: v0.42.1 (July 9, 2026)
+## Latest Release: v0.42.2 (July 22, 2026)
+
+### Dependency Security Maintenance
+
+This patch keeps the legacy compatibility CLI behavior unchanged while
+refreshing its dependency lockfile against current npm security advisories.
+
+**Fixed:**
+
+- High-severity `brace-expansion` denial-of-service advisory.
+- High-severity `fast-uri` host-confusion advisories.
+- High-severity `js-yaml` quadratic CPU-consumption advisory.
+
+**Breaking changes:** None.
+
+**Verification:**
+
+- `npm audit --audit-level=high`
+- `npm run validate`
+- `npm run build`
+
+**Upgrade:**
+
+```bash
+npm install -g rapidkit@0.42.2
+```
+
+[Full Release Notes](./releases/RELEASE_NOTES_v0.42.2.md)
+
+---
+
+## Previous Release: v0.42.1 (July 9, 2026)
 
 ### Workspai Migration Notice
 

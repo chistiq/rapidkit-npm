@@ -7,6 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.42.2] - 2026-07-22
+
+### Security
+
+- Updated the npm lockfile to resolve high-severity advisories in
+  `brace-expansion`, `fast-uri`, and `js-yaml` without a breaking dependency
+  upgrade.
+
+### Verification
+
+- `npm audit --audit-level=high`
+- `npm run validate`
+- `npm run build`
+
 ## [0.42.1] - 2026-07-09
 
 ### Changed

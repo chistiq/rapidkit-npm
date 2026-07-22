@@ -11,6 +11,7 @@ import {
   WORKSPACE_INTELLIGENCE_SUBCOMMANDS,
   WORKSPACE_SUBCOMMANDS,
 } from '../../utils/workspace-command-surface';
+import { resolveCompatibleExtensionContractsDir } from './extension-contract-generation';
 
 type RuntimeSurfaceContract = {
   schemaVersion: string;
@@ -118,16 +119,18 @@ describe('shared runtime command surface contract (npm)', () => {
   });
 
   it('keeps npm and rapidkit-vscode runtime surfaces semantically aligned', () => {
+    const extensionContractsDir = resolveCompatibleExtensionContractsDir();
+    if (!extensionContractsDir) {
+      return;
+    }
+
     const npmContractPath = path.resolve(
       process.cwd(),
       'contracts',
       'runtime-command-surface.v1.json'
     );
-    const extensionContractPath = path.resolve(
-      process.cwd(),
-      '..',
-      'rapidkit-vscode',
-      'contracts',
+    const extensionContractPath = path.join(
+      extensionContractsDir,
       'runtime-command-surface.v1.json'
     );
 

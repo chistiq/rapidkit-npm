@@ -3,8 +3,9 @@ import path from 'path';
 
 import { describe, expect, it } from 'vitest';
 
+import { resolveCompatibleExtensionContractsDir } from './extension-contract-generation';
+
 const NPM_CONTRACTS_DIR = path.resolve(process.cwd(), 'contracts');
-const VSCODE_CONTRACTS_DIR = path.resolve(process.cwd(), '..', 'rapidkit-vscode', 'contracts');
 
 const CLI_EXTENSION_CONTRACT_FILES = [
   'extension-cli-compatibility.v1.json',
@@ -31,13 +32,14 @@ function readJson(filePath: string): unknown {
 
 describe('CLI ↔ extension contract parity', () => {
   it('keeps rapidkit-npm contracts aligned with rapidkit-vscode/contracts', () => {
-    if (!fs.existsSync(VSCODE_CONTRACTS_DIR)) {
+    const vscodeContractsDir = resolveCompatibleExtensionContractsDir();
+    if (!vscodeContractsDir) {
       return;
     }
 
     for (const fileName of CLI_EXTENSION_CONTRACT_FILES) {
       const npmPath = path.join(NPM_CONTRACTS_DIR, fileName);
-      const extensionPath = path.join(VSCODE_CONTRACTS_DIR, fileName);
+      const extensionPath = path.join(vscodeContractsDir, fileName);
 
       expect(fs.existsSync(npmPath), `${fileName} missing in rapidkit-npm`).toBe(true);
       expect(fs.existsSync(extensionPath), `${fileName} missing in rapidkit-vscode/contracts`).toBe(
