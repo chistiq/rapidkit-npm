@@ -11,7 +11,7 @@ This release delivers workspace snapshot support along with repository and docum
   - Added support for metadata-only and full workspace snapshot modes.
 
 - 🧾 **Docs and release metadata cleanup**
-  - Updated GitHub repository links and references from `getrapidkit` to `rapidkitlabs` across README and docs.
+  - Updated GitHub repository links and references across README and docs.
   - Synced release note references and package metadata.
 
 - ✅ **Stability and coverage**

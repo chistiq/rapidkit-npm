@@ -8638,7 +8638,7 @@ function printMigrationNotice(): void {
   console.log(chalk.cyan('  npx workspai --help'));
   console.log(chalk.gray('Legacy compatibility package: npm install -g rapidkit'));
   console.log(chalk.gray('Package: https://www.npmjs.com/package/workspai'));
-  console.log(chalk.gray('Repo:    https://github.com/rapidkitlabs/workspai\n'));
+  console.log(chalk.gray('Repo:    https://github.com/chistiq/workspai\n'));
 }
 
 function printHelp() {

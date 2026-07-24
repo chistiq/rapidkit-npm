@@ -12,7 +12,7 @@ making the migration path to Workspai explicit for new users.
 - Added a top-level README migration notice that points new installs to the
   `workspai` npm package.
 - Added the new repository link:
-  <https://github.com/rapidkitlabs/workspai>
+  <https://github.com/chistiq/workspai>
 - Marked the `rapidkit` npm package as a compatibility package that is planned
   for deprecation in a future release.
 - Added the same migration notice to `npx rapidkit --help` so CLI-first users see

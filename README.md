@@ -19,7 +19,7 @@
 > ```
 >
 > New npm package: [workspai](https://www.npmjs.com/package/workspai)  
-> New repository: [rapidkitlabs/workspai](https://github.com/rapidkitlabs/workspai)
+> New repository: [chistiq/workspai](https://github.com/chistiq/workspai)
 >
 > The `rapidkit` package remains available during the migration window so
 > existing users and scripts can move safely.
@@ -155,7 +155,7 @@ In RapidKit, Workspace Intelligence is not a chat feature. It is the determinist
 
 How RapidKit transforms projects and repositories into workspace intelligence for developers, CI, and AI agents.
 
-![From Code to Shared Understanding](https://raw.githubusercontent.com/rapidkitlabs/rapidkit-npm/main/docs/From%20Code%20to%20Shared%20Understanding.png)
+![From Code to Shared Understanding](https://raw.githubusercontent.com/chistiq/rapidkit-npm/main/docs/From%20Code%20to%20Shared%20Understanding.png)
 
 Mermaid source for GitHub docs: [from-code-to-shared-understanding.md](docs/from-code-to-shared-understanding.md).
 
@@ -590,11 +590,11 @@ AI workflows, and developer-facing workspace operations.
 
 | Component  | Repository                                                             | Role                                        |
 | ---------- | ---------------------------------------------------------------------- | ------------------------------------------- |
-| npm CLI    | [workspai](https://github.com/rapidkitlabs/workspai)                   | Commands, governance, adoption, CI evidence |
-| Legacy npm | [rapidkit-npm](https://github.com/rapidkitlabs/rapidkit-npm)           | Compatibility package during migration      |
-| VS Code    | [rapidkit-vscode](https://github.com/rapidkitlabs/rapidkit-vscode)     | Workspai dashboard, sidebar, AI studio      |
-| Core       | [rapidkit-core](https://github.com/rapidkitlabs/rapidkit-core)         | Python engine, modules, doctor              |
-| Examples   | [rapidkit-examples](https://github.com/rapidkitlabs/rapidkit-examples) | Starter workspaces                          |
+| npm CLI    | [workspai](https://github.com/chistiq/workspai)                   | Commands, governance, adoption, CI evidence |
+| Legacy npm | [rapidkit-npm](https://github.com/chistiq/rapidkit-npm)           | Compatibility package during migration      |
+| VS Code    | [rapidkit-vscode](https://github.com/chistiq/rapidkit-vscode)     | Workspai dashboard, sidebar, AI studio      |
+| Core       | [rapidkit-core](https://github.com/chistiq/rapidkit-core)         | Python engine, modules, doctor              |
+| Examples   | [rapidkit-examples](https://github.com/chistiq/rapidkit-examples) | Starter workspaces                          |
 
 ## VS Code extension
 

@@ -258,7 +258,7 @@ $ rapidkit ai recommend "blockchain integration"
    Try more general terms (e.g., "storage" instead of "blockchain")
 
 3. Request feature:
-   https://github.com/rapidkitlabs/rapidkit/issues
+   https://github.com/chistiq/rapidkit/issues
 ```
 
 ---

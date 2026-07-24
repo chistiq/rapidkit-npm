@@ -43,7 +43,7 @@ making the migration path to Workspai explicit for new users.
 - **README migration guidance**
   - New installs are directed to the `workspai` npm package.
   - The new repository is linked at
-    [rapidkitlabs/workspai](https://github.com/rapidkitlabs/workspai).
+    [chistiq/workspai](https://github.com/chistiq/workspai).
   - The legacy `rapidkit` package is documented as a compatibility package that
     is planned for deprecation in a future release.
 
@@ -1188,7 +1188,8 @@ npm install -g rapidkit@0.29.1
 
 ### 🧪 Workspace Snapshot Support and Docs Cleanup
 
-This release adds workspace snapshot support and updates repository metadata/documentation references to the new `rapidkitlabs` organization.
+This release adds workspace snapshot support and updates repository metadata and
+documentation references to the organization repository.
 
 **What's New:**
 
@@ -1203,7 +1204,7 @@ This release adds workspace snapshot support and updates repository metadata/doc
   - `npx rapidkit snapshot restore <name> [--dry-run] [--force] [--json]`
 
 - 🧾 **Docs and release metadata cleanup**
-  - Updated GitHub repository links and references from `getrapidkit` to `rapidkitlabs` across README and docs.
+  - Updated GitHub repository links and references across README and docs.
   - Synced release note references and docs links in package metadata.
 
 - ✅ **Maintenance and stability**

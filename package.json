@@ -27,11 +27,15 @@
     "generator",
     "scaffold"
   ],
-  "author": "RapidKit Team",
+  "author": "Chistiq",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rapidkitlabs/rapidkit-npm.git"
+    "url": "git+https://github.com/chistiq/rapidkit-npm.git"
+  },
+  "homepage": "https://www.getrapidkit.com/",
+  "bugs": {
+    "url": "https://github.com/chistiq/rapidkit-npm/issues"
   },
   "bin": {
     "rapidkit": "dist/index.js",
@@ -76,6 +80,7 @@
     "generate:contracts": "node scripts/generate-shared-contracts.mjs",
     "check:generated-contracts": "node scripts/generate-shared-contracts.mjs --check",
     "check:agent-customization-drift": "node scripts/check-agent-customization-drift.mjs",
+    "check:brand": "node scripts/check-brand-contract.mjs",
     "validate:contracts": "npm run check:shared-contracts && vitest run src/__tests__/contracts/",
     "test:parity-contract": "npm run check:shared-contracts && vitest run src/__tests__/contracts/import-stack-parity.snapshot.test.ts",
     "test:watch": "vitest",
@@ -96,7 +101,7 @@
     "format": "prettier --write \"src/**/*.ts\"",
     "format:check": "prettier --check \"src/**/*.ts\"",
     "typecheck": "tsc --noEmit",
-    "validate": "npm run typecheck && npm run lint && npm run format:check && npm test",
+    "validate": "npm run check:brand && npm run typecheck && npm run lint && npm run format:check && npm test",
     "security": "npm audit --audit-level=moderate",
     "security:fix": "npm audit fix",
     "metrics": "npx tsx scripts/metrics.ts",
@@ -113,7 +118,7 @@
     "analyze": "npm run build && node scripts/analyze-dist.mjs",
     "size-check": "npm run build && size-limit",
     "bench": "npx tsx scripts/benchmarks.ts",
-    "quality": "npm run typecheck && npm run lint && npm run format:check && npm test && npm run size-check && npm run security && npm run validate:docs && npm run smoke:frontend-generators && npm run check:contracts && npm run check:shared-contracts && npm run check:parity-snapshot && npm run check:agent-customization-drift",
+    "quality": "npm run check:brand && npm run typecheck && npm run lint && npm run format:check && npm test && npm run size-check && npm run security && npm run validate:docs && npm run smoke:frontend-generators && npm run check:contracts && npm run check:shared-contracts && npm run check:parity-snapshot && npm run check:agent-customization-drift",
     "act-matrix": "act -P ubuntu-latest=ghcr.io/catthehacker/ubuntu:act-22.04 -P macos-latest=ghcr.io/catthehacker/ubuntu:act-22.04 -P windows-latest=ghcr.io/catthehacker/ubuntu:act-22.04 --pull=false -j build-test-matrix",
     "release:dry": "bash scripts/release.sh --no-publish --yes --allow-dirty",
     "release:patch": "bash scripts/release.sh patch",

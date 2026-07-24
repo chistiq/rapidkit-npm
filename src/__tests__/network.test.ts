@@ -88,7 +88,7 @@ describe('Network Operations', () => {
     it('should fetch repository information', async () => {
       const mockRepoInfo = {
         name: 'rapidkit-npm',
-        owner: 'getrapidkit',
+        owner: 'chistiq',
         stars: 100,
         description: 'RapidKit NPM package',
       };
@@ -100,7 +100,7 @@ describe('Network Operations', () => {
 
       global.fetch = fetchMock;
 
-      const response = await fetch('https://api.github.com/repos/rapidkitlabs/rapidkit-npm');
+      const response = await fetch('https://api.github.com/repos/chistiq/rapidkit-npm');
       const data = await response.json();
 
       expect(data.name).toBe('rapidkit-npm');

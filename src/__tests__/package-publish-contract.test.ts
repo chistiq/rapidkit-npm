@@ -109,15 +109,16 @@ describe('npm publish contract', () => {
     ].map((match) => match[1]);
 
     expect(rawImageUrls).toContain(
-      'https://raw.githubusercontent.com/rapidkitlabs/rapidkit-npm/main/docs/From%20Code%20to%20Shared%20Understanding.png'
+      'https://raw.githubusercontent.com/chistiq/rapidkit-npm/main/docs/From%20Code%20to%20Shared%20Understanding.png'
     );
-    expect(packageJson.repository?.url).toBe(
-      'git+https://github.com/rapidkitlabs/rapidkit-npm.git'
-    );
+    expect(packageJson.repository?.url).toBe('git+https://github.com/chistiq/rapidkit-npm.git');
+    expect(packageJson.author).toBe('Chistiq');
+    expect(packageJson.homepage).toBe('https://www.getrapidkit.com/');
+    expect(packageJson.bugs?.url).toBe('https://github.com/chistiq/rapidkit-npm/issues');
 
     for (const imageUrl of rawImageUrls) {
       const pathname = new URL(imageUrl).pathname;
-      const match = pathname.match(/^\/rapidkitlabs\/rapidkit-npm\/main\/(.+)$/);
+      const match = pathname.match(/^\/chistiq\/rapidkit-npm\/main\/(.+)$/);
       expect(match, imageUrl).not.toBeNull();
 
       const encodedAssetPath = match?.[1] ?? '';

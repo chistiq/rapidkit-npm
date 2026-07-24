@@ -3395,7 +3395,7 @@ ${name}/
 
 ---
 
-**Generated with RapidKit** | [GitHub](https://github.com/rapidkitlabs/rapidkit-npm)
+**Generated with RapidKit** | [GitHub](https://github.com/chistiq/rapidkit-npm)
 `;
 
     await fsPromises.writeFile(path.join(projectPath, 'README.md'), readmeContent, 'utf-8');

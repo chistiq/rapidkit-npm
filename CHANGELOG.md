@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Marked the `rapidkit` npm package as a compatibility package while the npm CLI
   moves to Workspai.
 - Added README and CLI help migration guidance that points new installs to the
-  `workspai` npm package and the `rapidkitlabs/workspai` repository.
+  `workspai` npm package and the `chistiq/workspai` repository.
 - Aligned extension compatibility metadata with `workspai@0.43.1`.
 - Updated shared create-planner/runtime contract wording to use Workspai for the
   npm CLI ownership surface.
@@ -941,7 +941,8 @@ unknown` verdict in `workspace verify`, chaining each project's content hash
 
 ### Changed
 
-- Updated repository metadata and documentation references from `getrapidkit` to `rapidkitlabs`.
+- Updated repository metadata and documentation references from `getrapidkit` to the
+  organization repository.
 
 ### Fixed
 
