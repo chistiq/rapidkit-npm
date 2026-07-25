@@ -1,6 +1,56 @@
 # Release Notes
 
-## Latest Release: v0.42.2 (July 22, 2026)
+## Latest Release: v0.42.3 (July 25, 2026)
+
+### Secure Compatibility and Workspai Migration
+
+This patch keeps the legacy `rapidkit` npm compatibility package safe and makes
+the migration path to Workspai shorter and clearer. Runtime command behavior is
+unchanged.
+
+**Security:**
+
+- Updated `brace-expansion` to `5.0.8` to resolve the current high-severity
+  unbounded-expansion denial-of-service advisory.
+- Updated `postcss` to `8.5.23` to resolve the current high-severity previous
+  source-map path traversal advisory.
+- Updated the compatible transitive `nanoid` dependency selected by PostCSS.
+- `npm audit --audit-level=high` reports zero vulnerabilities.
+
+**Migration and documentation:**
+
+- Replaced the feature-heavy README with a concise compatibility and migration
+  entry point.
+- Added a source-preserving migration guide for existing projects, named
+  workspaces, CI, agent/IDE consumers, verification, and rollback.
+- Added migration notices to user-facing legacy documentation so direct links
+  do not look like new-project onboarding.
+- Strengthened the docs drift and npm publish contracts around the legacy
+  package boundary.
+
+**Breaking changes:** None.
+
+**Verification:**
+
+- `npm audit --audit-level=high`
+- `npm run check:brand`
+- `npm run validate:docs`
+- `npm test`
+- `npm run build`
+
+**Upgrade:**
+
+```bash
+npm install -g rapidkit@0.42.3
+```
+
+New projects should install and use `workspai` instead.
+
+[Full Release Notes](./releases/RELEASE_NOTES_v0.42.3.md)
+
+---
+
+## Previous Release: v0.42.2 (July 22, 2026)
 
 ### Dependency Security Maintenance
 

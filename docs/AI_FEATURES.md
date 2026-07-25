@@ -1,5 +1,9 @@
 # 🤖 RapidKit AI Features
 
+> [!NOTE]
+> Legacy `rapidkit` compatibility documentation. For new projects, use
+> [Workspai](https://www.workspai.dev/). See the [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 AI-powered module recommendations using OpenAI embeddings to help you build faster.
 
 ## 🚀 Quick Start

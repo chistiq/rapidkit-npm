@@ -1,5 +1,9 @@
 # Utilities Documentation
 
+> [!NOTE]
+> Legacy `rapidkit` compatibility documentation. For new projects, use
+> [Workspai](https://www.workspai.dev/). See the [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 Internal cache and performance helpers for the npm CLI codebase.
 
 **End-user commands:** [doctor-command.md](./doctor-command.md) · [OPEN_SOURCE_USER_SCENARIOS.md](./OPEN_SOURCE_USER_SCENARIOS.md) · [../README.md](../README.md)

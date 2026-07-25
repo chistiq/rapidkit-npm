@@ -1,6 +1,14 @@
-# RapidKit NPM — Documentation Index
+# RapidKit npm compatibility documentation
 
-Hub for user and contributor documentation. Start with the [main README](../README.md) for install and quickstarts.
+> [!IMPORTANT]
+> These documents describe the legacy `rapidkit` compatibility CLI and its
+> `.rapidkit` artifacts. New users and new integrations should use
+> [Workspai](https://github.com/chistiq/workspai) and the current documentation
+> at [workspai.dev](https://www.workspai.dev/).
+
+Use this index when maintaining an existing RapidKit installation or helping a
+team migrate safely. Start with the [main README](../README.md) and
+[migration guide](./MIGRATING_TO_WORKSPAI.md).
 
 ## Table of contents
 
@@ -15,6 +23,7 @@ Hub for user and contributor documentation. Start with the [main README](../READ
 
 | Document | Description |
 | --- | --- |
+| [MIGRATING_TO_WORKSPAI.md](./MIGRATING_TO_WORKSPAI.md) | Canonical package, workspace, CI, agent, and rollback migration path |
 | [commands-reference.md](./commands-reference.md) | Full CLI syntax, profiles, and policy keys |
 | [workspace-operations.md](./workspace-operations.md) | Import, adopt, snapshots, archives, contracts, infra |
 | [workspace-run.md](./workspace-run.md) | Polyglot fleet orchestration (`workspace run`) |
@@ -26,7 +35,7 @@ Hub for user and contributor documentation. Start with the [main README](../READ
 | [WORKSPACE_MARKER_SPEC.md](./WORKSPACE_MARKER_SPEC.md) | Workspace marker format |
 | [PACKAGE_MANAGER_POLICY.md](./PACKAGE_MANAGER_POLICY.md) | npm-only policy for this repository |
 
-**Common tasks**
+**Legacy maintenance tasks**
 
 - Adopt an existing repo: [workspace-operations.md#import-and-adoption](./workspace-operations.md#import-and-adoption)
 - Scaffold a frontend app: [commands-reference.md](./commands-reference.md) (`create project nextjs <name>`)

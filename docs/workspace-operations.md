@@ -1,5 +1,10 @@
 # Workspace Operations
 
+> [!NOTE]
+> This page documents legacy `.rapidkit` workspace operations. New workspaces
+> should use [Workspai](https://www.workspai.dev/) and `.workspai` contracts. See
+> the [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 Behavioral guide for import, adoption, snapshots, archives, contracts, collaboration bundles, and local infra sidecars.
 
 Command syntax: [commands-reference.md](./commands-reference.md).

@@ -1,5 +1,9 @@
 # 🔄 Dynamic AI Integration with Python Core
 
+> [!NOTE]
+> Legacy `rapidkit` compatibility documentation. For new projects, use
+> [Workspai](https://www.workspai.dev/). See the [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 > **Date:** January 1, 2026  
 > **Implementation:** Dynamic module catalog fetching from Python Core
 

@@ -1,5 +1,9 @@
 # 🚀 AI Features - Quick Start Guide
 
+> [!NOTE]
+> Legacy `rapidkit` compatibility documentation. For new projects, use
+> [Workspai](https://www.workspai.dev/). See the [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 Get started with RapidKit AI recommendations in 60 seconds!
 
 ## Option 1: Zero-Config Start (Recommended) ⚡

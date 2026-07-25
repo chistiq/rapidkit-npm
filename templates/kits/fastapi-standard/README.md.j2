@@ -1,11 +1,11 @@
 # {{ project_name | replace('_', ' ') | title }}
 
-A minimal FastAPI service generated with the **FastAPI Standard Kit**. All domain-specific capabilities (configuration, logging, persistence, observability, authentication, etc.) are provided by RapidKit modules.
+A minimal FastAPI service generated with **RapidKit Core** using the FastAPI Standard Kit. It can be adopted into Workspai workspace intelligence when you want workspace-level context, evidence, and release governance.
 
 ## Quick start
 
 ```bash
-# Load the project-aware RapidKit CLI (adds .rapidkit/rapidkit to PATH)
+# Load the project-local RapidKit Core launcher (adds .rapidkit/rapidkit to PATH)
 source .rapidkit/activate
 
 # Bootstrap dependencies (creates .venv + installs Poetry-managed deps)
@@ -24,7 +24,7 @@ make audit
 make dev
 rapidkit dev  # same as make dev but auto-detects the project
 
-# Prefer RapidKit CLI helpers when you want it to resolve scripts automatically
+# Prefer RapidKit Core helpers when you want it to resolve scripts automatically
 rapidkit lint
 rapidkit test
 rapidkit start
@@ -36,33 +36,33 @@ rapidkit start
 
 > Lockfiles are generated automatically during scaffolding. Set `RAPIDKIT_SKIP_LOCKS=1` (or `RAPIDKIT_GENERATE_LOCKS=0`) before running `rapidkit create` if you need to opt out.
 
-> Want the full RapidKit CLI catalog? Run `rapidkit --help` or visit the CLI reference in the docs to explore every global/project command.
+> Want the project-local RapidKit Core catalog? Run `rapidkit --help`. If this project is part of a Workspai workspace, run `npx workspai --help` from the workspace root for workspace intelligence commands.
 
 ---
 
 ## Local development
 
-- `rapidkit init` bootstraps dependencies via the project-local CLI (run it after sourcing `.rapidkit/activate`).
+- `rapidkit init` bootstraps dependencies via the project-local RapidKit Core launcher (run it after sourcing `.rapidkit/activate`).
 - `make init` is an optional alias for `rapidkit init` when you prefer Make targets.
 - `make install` re-runs `rapidkit init` (unless you set `SKIP_INIT=1`) and refreshes developer tooling such as pre-commit hooks.
 - `./bootstrap.sh` copies `.env.example` to `.env` (if missing) and runs `SKIP_INIT=1 make install` for you.
 - `make dev` (or `rapidkit dev`) launches Uvicorn with the correct module path and reload settings.
 - `make lint`, `make typecheck`, and `make test` wrap Ruff, mypy, and pytest for consistent CI parity.
 - `make audit` shells out to `pip-audit` to surface vulnerable dependencies.
-- Prefer `rapidkit lint`, `rapidkit test`, and `rapidkit start` if you want RapidKit to autodetect the virtualenv and command wiring.
+- Prefer `rapidkit lint`, `rapidkit test`, and `rapidkit start` if you want RapidKit Core to autodetect the virtualenv and command wiring.
 ```
 
 ## Available commands
 
 ```bash
 rapidkit init       # 🔧 Bootstrap the project (create .venv + install deps)
-make init           # 🔧 Optional alias for rapidkit init (wraps the local CLI)
+make init           # 🔧 Optional alias for rapidkit init (wraps the local Core launcher)
 ./bootstrap.sh      # 🪄 Copy env template + install hooks/tooling (idempotent)
 rapidkit dev        # 🚀 Start development server with hot reload
 make dev            # 🚀 Alternative via Makefile helper
 rapidkit start      # ⚡ Start production server
-rapidkit lint       # 🔧 Run lint checks via project-aware CLI
-rapidkit test       # 🧪 Run pytest through RapidKit CLI
+rapidkit lint       # 🔧 Run lint checks via RapidKit Core
+rapidkit test       # 🧪 Run pytest through RapidKit Core
 make install        # 📦 Install Poetry deps + hooks
 make lint           # ✅ Lint via Ruff + Black
 make typecheck      # 🔍 Run mypy on src

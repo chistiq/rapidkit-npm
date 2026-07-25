@@ -1,5 +1,9 @@
 # 🎯 AI Examples - Real-World Use Cases
 
+> [!NOTE]
+> Legacy `rapidkit` compatibility documentation. For new projects, use
+> [Workspai](https://www.workspai.dev/). See the [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 Complete examples showing how to use RapidKit AI for different scenarios.
 
 ## 📱 Example 1: Building a Social Media App

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Project CLI wrapper for {{ project_name }} (DDD edition).
 
-Prefer a per-project CLI in `.rapidkit/cli.py` when present. Otherwise
+Prefer a per-project RapidKit Core wrapper in `.rapidkit/cli.py` when present. Otherwise
 provide helpful guidance to the developer rather than guessing environment
 details.
 """
@@ -14,7 +14,7 @@ from typing import Optional
 
 
 def _missing_cli(name: str) -> None:
-    print(f"❌ Missing project-local CLI (.rapidkit/cli.py) - can't run '{name}'")
+    print(f"❌ Missing project-local RapidKit Core wrapper (.rapidkit/cli.py) - can't run '{name}'")
     print("💡 If you're a new user run: rapidkit init  # create venv + install deps")
     sys.exit(127)
 
@@ -35,7 +35,7 @@ def _load_project_cli_module() -> Optional[object]:
 _mod = _load_project_cli_module()
 
 
-# Default placeholders -- call `_missing_cli` if the project-local CLI isn't
+# Default placeholders -- call `_missing_cli` if the project-local RapidKit Core wrapper isn't
 # available. These are real functions so linters don't complain.
 def init() -> None:
     _missing_cli("init")

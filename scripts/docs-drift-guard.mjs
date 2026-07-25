@@ -6,22 +6,35 @@ const readmePath = path.join(root, 'README.md');
 const readme = fs.readFileSync(readmePath, 'utf8');
 
 const requiredSnippets = [
+  '`rapidkit` is the legacy npm compatibility package',
+  'npx workspai adopt .',
+  'npx workspai workspace intelligence run',
+  'docs/MIGRATING_TO_WORKSPAI.md',
+  'https://github.com/chistiq/workspai',
+  'https://www.workspai.dev/',
+  'npx rapidkit --help',
   'rapidkit doctor workspace',
   'rapidkit setup <python|node|go|java|dotnet> [--warm-deps]',
   'rapidkit workspace list',
   'rapidkit cache <status|clear|prune|repair>',
   'rapidkit mirror <status|sync|verify|rotate>',
-  '.github/workflows/ci.yml',
-  '.github/workflows/workspace-e2e-matrix.yml',
-  '.github/workflows/windows-bridge-e2e.yml',
-  '.github/workflows/e2e-smoke.yml',
-  '.github/workflows/security.yml',
+  'docs/ci-workflows.md',
 ];
 
 const errors = [];
 for (const snippet of requiredSnippets) {
   if (!readme.includes(snippet)) {
     errors.push(`README missing required snippet: ${snippet}`);
+  }
+}
+
+const forbiddenSnippets = [
+  'Recommended for new projects:\n\n```bash\nnpm install -g rapidkit',
+  'New workspaces go under `~/rapidkit/workspaces/<name>`',
+];
+for (const snippet of forbiddenSnippets) {
+  if (readme.includes(snippet)) {
+    errors.push(`README contains legacy-first onboarding: ${snippet.split('\n')[0]}`);
   }
 }
 

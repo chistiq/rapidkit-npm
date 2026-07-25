@@ -1,5 +1,10 @@
 # RapidKit Doctor Command
 
+> [!NOTE]
+> This page documents the legacy `rapidkit doctor` compatibility surface. New
+> projects should use [Workspai](https://www.workspai.dev/). See the
+> [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 `doctor` checks health for the npm wrapper environment in system, workspace, or project scope.
 
 **Related:** [workspace-operations.md](./workspace-operations.md) · [commands-reference.md](./commands-reference.md) · [Documentation index](./README.md)

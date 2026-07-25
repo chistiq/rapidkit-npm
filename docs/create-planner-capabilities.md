@@ -1,5 +1,10 @@
 # Create Planner Capabilities
 
+> [!NOTE]
+> This document preserves the legacy RapidKit planner contract for compatibility
+> consumers. New creation flows belong to [Workspai](https://www.workspai.dev/).
+> See the [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 RapidKit is a Workspace Intelligence platform, not a blind scaffold wrapper.
 The create planner separates project creation into three lanes so developers,
 CI, and AI agents share the same expectations.

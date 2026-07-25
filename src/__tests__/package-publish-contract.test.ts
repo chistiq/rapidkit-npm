@@ -34,9 +34,9 @@ describe('npm publish contract', () => {
     expect(packageJson.bin?.['rapidkit-npm']).toBe('dist/index.js');
   });
 
-  it('keeps npm package metadata aligned with Workspace Intelligence positioning', () => {
+  it('positions the package as a legacy compatibility bridge to Workspai', () => {
     expect(packageJson.description).toBe(
-      'Open-source workspace intelligence CLI for software systems: create, adopt, govern, verify, and align polyglot workspaces for humans, CI, IDEs, and AI agents.'
+      'Legacy RapidKit npm compatibility CLI for existing users and migration to Workspai. New projects should use the workspai package.'
     );
     expect(packageJson.description?.length).toBeLessThanOrEqual(160);
     expect(packageJson.keywords).toEqual(
@@ -102,15 +102,17 @@ describe('npm publish contract', () => {
     expect(securityWorkflow).toContain('npm audit --audit-level=high');
   });
 
-  it('publishes README image assets referenced from npm-safe raw GitHub URLs', () => {
+  it('publishes migration guidance and validates any npm README image assets', () => {
     const readme = fs.readFileSync(path.join(process.cwd(), 'README.md'), 'utf8');
     const rawImageUrls = [
       ...readme.matchAll(/!\[[^\]]+\]\((https:\/\/raw\.githubusercontent\.com\/[^)]+)\)/g),
     ].map((match) => match[1]);
 
-    expect(rawImageUrls).toContain(
-      'https://raw.githubusercontent.com/chistiq/rapidkit-npm/main/docs/From%20Code%20to%20Shared%20Understanding.png'
-    );
+    expect(readme).toContain('`rapidkit` is the legacy npm compatibility package');
+    expect(readme).toContain('https://github.com/chistiq/workspai');
+    expect(readme).toContain('docs/MIGRATING_TO_WORKSPAI.md');
+    expect(isPublishedByFiles('docs/MIGRATING_TO_WORKSPAI.md')).toBe(true);
+    expect(fs.existsSync(path.join(process.cwd(), 'docs/MIGRATING_TO_WORKSPAI.md'))).toBe(true);
     expect(packageJson.repository?.url).toBe('git+https://github.com/chistiq/rapidkit-npm.git');
     expect(packageJson.author).toBe('Chistiq');
     expect(packageJson.homepage).toBe('https://www.getrapidkit.com/');

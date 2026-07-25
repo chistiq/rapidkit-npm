@@ -1,5 +1,10 @@
 # Workspace Run — Polyglot Fleet Orchestration
 
+> [!NOTE]
+> Legacy `rapidkit workspace run` compatibility documentation. New integrations
+> should use [Workspai](https://www.workspai.dev/). See the
+> [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 `workspace run` executes CI-safe stages (`init`, `test`, `build`, `start`) across discovered projects in a workspace. Command syntax is in [commands-reference.md](./commands-reference.md).
 
 ## Quick start

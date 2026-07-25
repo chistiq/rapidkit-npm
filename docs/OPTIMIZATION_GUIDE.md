@@ -1,5 +1,9 @@
 # Optimization Guide
 
+> [!NOTE]
+> Legacy `rapidkit` compatibility documentation. For new projects, use
+> [Workspai](https://www.workspai.dev/). See the [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 Optimization ideas for the RapidKit npm CLI codebase.
 
 **Users:** [../README.md](../README.md) · [OPEN_SOURCE_USER_SCENARIOS.md](./OPEN_SOURCE_USER_SCENARIOS.md) · [Documentation index](./README.md)

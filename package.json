@@ -1,8 +1,8 @@
 {
   "name": "rapidkit",
-  "version": "0.42.2",
+  "version": "0.42.3",
   "type": "module",
-  "description": "Open-source workspace intelligence CLI for software systems: create, adopt, govern, verify, and align polyglot workspaces for humans, CI, IDEs, and AI agents.",
+  "description": "Legacy RapidKit npm compatibility CLI for existing users and migration to Workspai. New projects should use the workspai package.",
   "keywords": [
     "rapidkit",
     "workspai",

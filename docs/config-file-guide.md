@@ -1,5 +1,9 @@
 # 📖 RapidKit Config File Guide
 
+> [!NOTE]
+> Legacy `rapidkit` compatibility documentation. For new projects, use
+> [Workspai](https://www.workspai.dev/). See the [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 ## 🎯 Purpose of `rapidkit.config.js`
 
 The `rapidkit.config.js` file is an **optional configuration file** that allows you to define default settings for creating workspaces and projects.

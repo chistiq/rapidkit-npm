@@ -7,6 +7,36 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.42.3] - 2026-07-25
+
+### Security
+
+- Updated `brace-expansion` and `postcss` transitive dependencies to versions
+  that resolve the current high-severity npm advisories.
+
+### Documentation
+
+- Replaced the legacy feature-heavy README with a concise compatibility and
+  migration entry point for existing RapidKit users.
+- Added a source-preserving migration guide for projects, named workspaces, CI,
+  agents, verification, and rollback.
+- Repositioned the documentation index as a legacy maintenance surface and
+  strengthened the docs drift guard against legacy-first onboarding.
+
+### Fixed
+
+- Updated the npm publish contract to validate the compatibility-package
+  description, Workspai migration links, published migration guide, and any
+  future npm-safe README image assets.
+
+### Verification
+
+- `npm audit --audit-level=high`
+- `npm run check:brand`
+- `npm run validate:docs`
+- `npm test`
+- `npm run build`
+
 ## [0.42.2] - 2026-07-22
 
 ### Security

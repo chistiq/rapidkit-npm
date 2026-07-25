@@ -1,5 +1,10 @@
 # RapidKit Workspace Marker Specification
 
+> [!NOTE]
+> Legacy `.rapidkit` compatibility specification. New integrations should use
+> [Workspai](https://www.workspai.dev/) and canonical `.workspai` contracts. See
+> the [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 ## Overview
 
 The `.rapidkit-workspace` file is the standardized marker that identifies a RapidKit workspace. It uses a **metadata layer architecture** that allows multiple tools (npm CLI, VS Code Extension, Python Core, etc.) to add their own metadata while preserving a consistent core structure.

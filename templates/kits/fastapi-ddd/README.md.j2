@@ -1,11 +1,11 @@
 # {{ project_name }}
 
-Domain-driven FastAPI service generated with [RapidKit](https://github.com/chistiq/rapidkit-core).
+Domain-driven FastAPI service generated with [RapidKit Core](https://github.com/rapidkitlabs/rapidkit-core). It can be adopted into Workspai workspace intelligence when you want workspace-level context, evidence, and release governance.
 
 ## Quick start
 
 ```bash
-# Load the project-aware RapidKit CLI (adds .rapidkit/rapidkit to PATH)
+# Load the project-local RapidKit Core launcher (adds .rapidkit/rapidkit to PATH)
 source .rapidkit/activate
 
 # Bootstrap dependencies (creates .venv + installs Poetry deps)
@@ -22,7 +22,7 @@ make test
 # Run the service
 make dev
 
-# Use the RapidKit CLI helpers when you prefer auto-detected environments
+# Use RapidKit Core helpers when you prefer auto-detected environments
 rapidkit dev
 rapidkit lint
 rapidkit test
@@ -37,7 +37,7 @@ make audit
 
 > Lockfiles are generated automatically during scaffolding. Set `RAPIDKIT_SKIP_LOCKS=1` (or `RAPIDKIT_GENERATE_LOCKS=0`) before running `rapidkit create` if you want to skip the lockfile attempt.
 
-> Need to see every RapidKit CLI command? Run `rapidkit --help` or check the CLI reference in the docs for the full catalog.
+> Need to see every project-local RapidKit Core command? Run `rapidkit --help`. If this project is part of a Workspai workspace, run `npx workspai --help` from the workspace root for workspace intelligence commands.
 
 ## Project structure
 
@@ -99,7 +99,7 @@ health endpoint and the application factory.
 
 ## Local development
 
-- `rapidkit init` bootstraps dependencies via the project-local CLI (run it after sourcing `.rapidkit/activate`).
+- `rapidkit init` bootstraps dependencies via the project-local RapidKit Core launcher (run it after sourcing `.rapidkit/activate`).
 - `make init` is an optional alias for `rapidkit init` when you prefer Make targets.
 - `make install` re-runs `rapidkit init` unless `SKIP_INIT=1` is set and refreshes developer tooling such as pre-commit hooks.
 - `./bootstrap.sh` copies `.env.example` to `.env` (when missing) and runs `SKIP_INIT=1 make install` for you.
@@ -107,7 +107,7 @@ health endpoint and the application factory.
 - `make lint`, `make typecheck`, and `make test` (or `rapidkit lint` / `rapidkit test`) are thin wrappers around Ruff, mypy, and pytest for consistent CI parity.
 - `make audit` runs `pip-audit` and `npm audit` to surface vulnerable dependencies early.
 
-Pre-commit is configured with Ruff, Black, mypy, and hygiene hooks; `./bootstrap.sh` installs them automatically (or run `SKIP_INIT=1 make install`). Use the RapidKit CLI variants when you need it to auto-discover the right virtual environment inside automation scripts.
+Pre-commit is configured with Ruff, Black, mypy, and hygiene hooks; `./bootstrap.sh` installs them automatically (or run `SKIP_INIT=1 make install`). Use the RapidKit Core variants when you need them to auto-discover the right virtual environment inside automation scripts.
 
 <!-- <<<inject:module-snippet>>> -->
 

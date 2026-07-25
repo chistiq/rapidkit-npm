@@ -1,5 +1,10 @@
 # Commands Reference
 
+> [!NOTE]
+> This reference documents the legacy `rapidkit` compatibility command. New
+> scripts should use [Workspai](https://www.workspai.dev/). See the
+> [migration guide](./MIGRATING_TO_WORKSPAI.md).
+
 Complete CLI syntax for the RapidKit npm wrapper. For behavior and workflows, see [workspace-operations.md](./workspace-operations.md) and [OPEN_SOURCE_USER_SCENARIOS.md](./OPEN_SOURCE_USER_SCENARIOS.md).
 
 ## Workspace lifecycle
